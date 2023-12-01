@@ -9,7 +9,6 @@ import com.example.newsapp.R
 
 class MainNewsFragment : Fragment() {
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

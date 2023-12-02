@@ -3,7 +3,6 @@ package com.example.newsapp.mainnews.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView.OnItemClickListener
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -16,7 +15,7 @@ class MainNewsAdapter(private val clickListener: OnItemClickListener) : Recycler
     interface OnItemClickListener {
         fun onItemClick(article: Articles)
     }
-    private var data = listOf<Articles>()
+    var data = listOf<Articles>()
         set(value)  {
             field = value
             notifyDataSetChanged()
@@ -42,9 +41,9 @@ class MainNewsAdapter(private val clickListener: OnItemClickListener) : Recycler
 }
 
 class ArticleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    val newsTitle: TextView = itemView.findViewById(R.id.newsTitle)
-    val newsDate : TextView = itemView.findViewById(R.id.newsDate)
-    val newsThumbnail : ImageView = itemView.findViewById(R.id.newsThumbnail)
+    private val newsTitle: TextView = itemView.findViewById(R.id.newsTitle)
+    private val newsDate : TextView = itemView.findViewById(R.id.newsDate)
+    private val newsThumbnail : ImageView = itemView.findViewById(R.id.newsThumbnail)
 
     fun bind(article: Articles, clickListener: MainNewsAdapter.OnItemClickListener) {
         newsTitle.text = article.title

@@ -28,7 +28,7 @@ class MainNewsViewModel(application: Application) : AndroidViewModel(application
             try {
                 val category = "business"
                 val country = "us"
-                val query = "apple"
+                val query = ""
                 val apiKey = "dfcf1a29e0ee4a79a8f9cd2b93afe259"
 
                 val response = NewsApi.retrofitService.getNews(category, country, query, apiKey)

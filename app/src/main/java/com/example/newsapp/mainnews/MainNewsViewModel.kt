@@ -29,7 +29,7 @@ class MainNewsViewModel(application: Application) : AndroidViewModel(application
                 val category = "business"
                 val country = "us"
                 val query = ""
-                val apiKey = "dfcf1a29e0ee4a79a8f9cd2b93afe259"
+                val apiKey = "dfcf1a29e0ee4a79a8f9cd2b93afe259" //better way to hide api key? use string.xml?
 
                 val response = NewsApi.retrofitService.getNews(category, country, query, apiKey)
 

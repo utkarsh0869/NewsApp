@@ -1,57 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".detailnews.DetailNewsFragment">
-
-    <ScrollView
+<layout>
+    <data>
+        <variable
+            name="article"
+            type="com.example.newsapp.network.models.Articles" />
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".detailnews.DetailNewsFragment">
+
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_margin="8dp">
-            <TextView
+            android:layout_height="match_parent">
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/newsDetailTitle"
-                android:textSize="26sp"
-                android:textColor="@color/black"/>
-            <TextView
-                android:id="@+id/newsDetailDate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:textColor="@color/black"/>
-            <TextView
-                android:id="@+id/newsDetailAuthor"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:textColor="@color/black" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/newsDetailSource"
-                android:textSize="16sp"
-                android:textColor="@color/black" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/newsDetailDescription"
-                android:textSize="20sp"
-                android:textColor="@color/black"/>
-            <TextView
-                android:id="@+id/newsDetailLink"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:autoLink="web"
-                android:text="Read more about this article"
-                android:linksClickable="true" />
-        </LinearLayout>
-    </ScrollView>
-</LinearLayout>
+                android:orientation="vertical"
+                android:layout_margin="8dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/newsDetailTitle"
+                    android:textSize="26sp"
+                    android:textColor="@color/black"
+                    android:text="@{article.title}"/>
+                <TextView
+                    android:id="@+id/newsDetailDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:text="@{article.publishedAt}"/>
+                <TextView
+                    android:id="@+id/newsDetailAuthor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:text="@{article.author}"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/newsDetailSource"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:text="@{article.source.name}"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/newsDetailDescription"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:text="@{article.description}"/>
+                <TextView
+                    android:id="@+id/newsDetailLink"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:text="@{article.url}"
+                    android:linksClickable="true" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

@@ -46,7 +46,7 @@ class MainNewsFragment : Fragment(), MainNewsAdapter.OnItemClickListener {
         val bundle = Bundle()
         bundle.putSerializable("article", article)
 
-//        // Get the NavController from the NavigationHostFragment or NavHostFragment
+//        problem with dependencies and build.gradle file
 //        val navController = findNavController()
 //        navController.navigate(R.id.action_mainNewsFragment_to_detailNewsFragment, bundle)
 
@@ -56,7 +56,7 @@ class MainNewsFragment : Fragment(), MainNewsAdapter.OnItemClickListener {
         val fragmentManager = requireActivity().supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.nav_host_fragment, destinationFragment)
-        fragmentTransaction.addToBackStack(null) // Optional: Add transaction to the back stack
+        fragmentTransaction.addToBackStack(null) // Optional: Add transaction to the back stack, navHost handles it for us
         fragmentTransaction.commit()
     }
 

@@ -15,7 +15,8 @@ import kotlinx.coroutines.withContext
 class MainNewsViewModel(application: Application) : AndroidViewModel(application){
 
     private val _articlesList = MutableLiveData<List<Articles>>()
-    val articlesList: LiveData<List<Articles>> get() = _articlesList
+    val articlesList: LiveData<List<Articles>>
+        get() = _articlesList
 
     init {
         viewModelScope.launch {

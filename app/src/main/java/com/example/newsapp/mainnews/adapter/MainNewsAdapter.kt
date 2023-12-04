@@ -10,6 +10,9 @@ import com.example.newsapp.R
 import com.example.newsapp.network.models.Articles
 import com.squareup.picasso.Picasso
 
+/**
+ * Possible improvement: Use ListAdapter so that we don't have to worry about changes in the data.
+ */
 class MainNewsAdapter(private val clickListener: OnItemClickListener) : RecyclerView.Adapter<ArticleViewHolder>() {
 
     interface OnItemClickListener {
